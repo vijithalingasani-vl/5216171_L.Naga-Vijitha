@@ -607,6 +607,531 @@ vijitha@DESKTOP-MHLPFOC:~$
 
 
 
+day 2 commands
+vijitha@DESKTOP-MHLPFOC:~/stepin$ vi sum.c
+vijitha@DESKTOP-MHLPFOC:~/stepin$ gcc sum.c && ./a.out
+sum = 3
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat sum.c
+#include<stdio.h>
+int main(){
+        int a,b,c;
+                a=1;
+                b=2;
+                c=a+b;
+                printf("sum = %d\n", c);
+                return 0;
+}
+vijitha@DESKTOP-MHLPFOC:~/stepin$ gcc sum.c
+vijitha@DESKTOP-MHLPFOC:~/stepin$ ./a.out
+sum = 3
+vijitha@DESKTOP-MHLPFOC:~/stepin$ ls
+a.out  linux  sdlc  sum.c
+vijitha@DESKTOP-MHLPFOC:~/stepin$ more sum.c
+#include<stdio.h>
+int main(){
+        int a,b,c;
+                a=1;
+                b=2;
+                c=a+b;
+                printf("sum = %d\n", c);
+                return 0;
+}
+vijitha@DESKTOP-MHLPFOC:~/stepin$ vi filecmd
+vijitha@DESKTOP-MHLPFOC:~/stepin$ more filecmd
+basic linux commands
+mv
+date--date"tomorrow"
+touch
+nano
+vi
+cmd
+cd ..
+cd
+pwd
+cp
+tac
+filter & pattern matching commands:
+more
+less
+head
+tail
+paste
+cut
+sort
+diff
+grep
+sed
+awk
+file premission cmd:
+chomd
+chown
+umask
+vijitha@DESKTOP-MHLPFOC:~/stepin$ less filecmd
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat for less comd output will not be displayed
+cat: for: No such file or directory
+cat: less: No such file or directory
+cat: comd: No such file or directory
+cat: output: No such file or directory
+cat: will: No such file or directory
+cat: not: No such file or directory
+cat: be: No such file or directory
+cat: displayed: No such file or directory
+vijitha@DESKTOP-MHLPFOC:~/stepin$ echo  for less comd output will not be displayed
+for less comd output will not be displayed
+vijitha@DESKTOP-MHLPFOC:~/stepin$ head filecmd
+basic linux commands
+mv
+date--date"tomorrow"
+touch
+nano
+vi
+cmd
+cd ..
+cd
+pwd
+vijitha@DESKTOP-MHLPFOC:~/stepin$ head -n 5 filecmd
+basic linux commands
+mv
+date--date"tomorrow"
+touch
+nano
+vijitha@DESKTOP-MHLPFOC:~/stepin$ tail cmd
+tail: cannot open 'cmd' for reading: No such file or directory
+vijitha@DESKTOP-MHLPFOC:~/stepin$ tail filecmd
+cut
+sort
+diff
+grep
+sed
+awk
+file premission cmd:
+chomd
+chown
+umask
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nano sample.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat sample.txt
+101:pune:Maharastra:5460
+100:chennai:tamilnadu:9000
+103:delhi:delhi:1000
+104:kolkata:west bengal:9876
+102:mumbai:maharastra:5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cut -c 1-3 sample.txt
+101
+100
+103
+104
+102
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cut -c 4-10 sample.txt
+:pune:M
+:chenna
+:delhi:
+:kolkat
+:mumbai
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cut -d ':' -f2 sample.txt
+pune
+chennai
+delhi
+kolkata
+mumbai
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cut -d ':' -f2,3 sample.txt
+pune:Maharastra
+chennai:tamilnadu
+delhi:delhi
+kolkata:west bengal
+mumbai:maharastra
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nano f1
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nano f2
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat f1
+this file is for practing stepin training program for pasting commands
+filter command is used to cut the horizantal and vertical contents
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat f2
+two the commands i learnt are
+head
+tail
+cut
+nano
+vi
+vijitha@DESKTOP-MHLPFOC:~/stepin$ paste f1 f2
+this file is for practing stepin training program for pasting commands  two the commands i learnt are
+filter command is used to cut the horizantal and vertical contents      head
+        tail
+        cut
+        nano
+        vi
+vijitha@DESKTOP-MHLPFOC:~/stepin$ paste -d ':' f1 f2
+this file is for practing stepin training program for pasting commands :two the commands i learnt are
+filter command is used to cut the horizantal and vertical contents:head
+:tail
+:cut
+:nano
+:vi
+vijitha@DESKTOP-MHLPFOC:~/stepin$ paste -s f1 f2
+this file is for practing stepin training program for pasting commands  filter command is used to cut the horizantal and vertical contents
+two the commands i learnt are   head    tail    cut     nano    vi
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat sample.txt
+101:pune:Maharastra:5460
+100:chennai:tamilnadu:9000
+103:delhi:delhi:1000
+104:kolkata:west bengal:9876
+102:mumbai:maharastra:5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sort sample.txt
+100:chennai:tamilnadu:9000
+101:pune:Maharastra:5460
+102:mumbai:maharastra:5200
+103:delhi:delhi:1000
+104:kolkata:west bengal:9876
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sort sample.txt -r
+104:kolkata:west bengal:9876
+103:delhi:delhi:1000
+102:mumbai:maharastra:5200
+101:pune:Maharastra:5460
+100:chennai:tamilnadu:9000
+vijitha@DESKTOP-MHLPFOC:~/stepin$ paste -s sample.txt
+101:pune:Maharastra:5460        100:chennai:tamilnadu:9000      103:delhi:delhi:1000    104:kolkata:west bengal:9876   102:mumbai:maharastra:5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sort -t ':' -k2 sample.txt
+100:chennai:tamilnadu:9000
+103:delhi:delhi:1000
+104:kolkata:west bengal:9876
+102:mumbai:maharastra:5200
+101:pune:Maharastra:5460
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sort -t ':' -k4 sample.txt
+103:delhi:delhi:1000
+102:mumbai:maharastra:5200
+101:pune:Maharastra:5460
+100:chennai:tamilnadu:9000
+104:kolkata:west bengal:9876
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat sample.txt
+101:pune:Maharastra:5460
+100:chennai:tamilnadu:9000
+103:delhi:delhi:1000
+104:kolkata:west bengal:9876
+102:mumbai:maharastra:5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ tr ':' '|' < sample.txt
+101|pune|Maharastra|5460
+100|chennai|tamilnadu|9000
+103|delhi|delhi|1000
+104|kolkata|west bengal|9876
+102|mumbai|maharastra|5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ ls
+a.out  f1  f2  filecmd  linux  sample.txt  sdlc  sum.c
+vijitha@DESKTOP-MHLPFOC:~/stepin$ tr ':' '|' < sample.txt > s45.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ ls
+a.out  f1  f2  filecmd  linux  s45.txt  sample.txt  sdlc  sum.c
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat s45.txt
+101|pune|Maharastra|5460
+100|chennai|tamilnadu|9000
+103|delhi|delhi|1000
+104|kolkata|west bengal|9876
+102|mumbai|maharastra|5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ tr '|' ' ' < s45.txt
+101 pune Maharastra 5460
+100 chennai tamilnadu 9000
+103 delhi delhi 1000
+104 kolkata west bengal 9876
+102 mumbai maharastra 5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ tr ' ' '| ' < s45.txt
+101|pune|Maharastra|5460
+100|chennai|tamilnadu|9000
+103|delhi|delhi|1000
+104|kolkata|west|bengal|9876
+102|mumbai|maharastra|5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat sample.txt
+101:pune:Maharastra:5460
+100:chennai:tamilnadu:9000
+103:delhi:delhi:1000
+104:kolkata:west bengal:9876
+102:mumbai:maharastra:5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ tr -s '0' < sample.txt
+101:pune:Maharastra:5460
+10:chennai:tamilnadu:90
+103:delhi:delhi:10
+104:kolkata:west bengal:9876
+102:mumbai:maharastra:520
+vijitha@DESKTOP-MHLPFOC:~/stepin$ tr -d '0' < sample.txt
+11:pune:Maharastra:546
+1:chennai:tamilnadu:9
+13:delhi:delhi:1
+14:kolkata:west bengal:9876
+12:mumbai:maharastra:52
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nano example .txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat example.txt
+cat: example.txt: No such file or directory
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nano example.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat example.txt
+i am vijitha lingasani
+I am vijitha lingasani
+i am taking linux training
+i am vijitha lingasani
+vijitha@DESKTOP-MHLPFOC:~/stepin$ uniq example.txt
+i am vijitha lingasani
+I am vijitha lingasani
+i am taking linux training
+i am vijitha lingasani
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cmp sample.txt s1.txt
+cmp: s1.txt: No such file or directory
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cmp sample.txt s45.txt
+sample.txt s45.txt differ: byte 4, line 1
+vijitha@DESKTOP-MHLPFOC:~/stepin$ diff sample.txt s45.txt
+1,5c1,5
+< 101:pune:Maharastra:5460
+< 100:chennai:tamilnadu:9000
+< 103:delhi:delhi:1000
+< 104:kolkata:west bengal:9876
+< 102:mumbai:maharastra:5200
+---
+> 101|pune|Maharastra|5460
+> 100|chennai|tamilnadu|9000
+> 103|delhi|delhi|1000
+> 104|kolkata|west bengal|9876
+> 102|mumbai|maharastra|5200
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nnao example 1.txt
+Command 'nnao' not found, did you mean:
+  command 'nano' from deb nano (7.2-2ubuntu0.1)
+Try: sudo apt install <deb name>
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nano example2 .txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nano example2 .txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat example2 .txt
+hello i am vijitha
+i completed my btech
+i am att training
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sed 's/att/attending/' example2 .txt
+hello i am vijitha
+i completed my btech
+i am attending training
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sed 's/i/I/' example2 .txt
+hello I am vijitha
+I completed my btech
+I am att training
+vijitha@DESKTOP-MHLPFOC:~/stepin$ cat example2 .txt
+hello i am vijitha
+i completed my btech
+i am att training
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sed 's/i/d' example2 .txt
+sed: -e expression #1, char 5: unterminated `s' command
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sed '/i/d' example2 .txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sed '/hello/d' example2 .txt
+i completed my btech
+i am att training
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sed -n '/i/p' example2 .txt
+hello i am vijitha
+i completed my btech
+i am att training
+vijitha@DESKTOP-MHLPFOC:~/stepin$ sed -n '/vijitha/p' example2 .txt
+hello i am vijitha
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nnao friends.txt
+Command 'nnao' not found, did you mean:
+  command 'nano' from deb nano (7.2-2ubuntu0.1)
+Try: sudo apt install <deb name>
+vijitha@DESKTOP-MHLPFOC:~/stepin$ nano friends.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ awk '{print $0}' friends.txt
+chandu 22 12000000
+abignan 22 198987878
+deekshi 21 100000
+puji 19 1099387
+nikhil 22 348985
+
+vijitha@DESKTOP-MHLPFOC:~/stepin$ awk '{print $1, $3}' friends.txt
+chandu 12000000
+abignan 198987878
+deekshi 100000
+puji 1099387
+nikhil 348985
+
+vijitha@DESKTOP-MHLPFOC:~/stepin$ awk $3>50000 '{print $1, $3}' friends.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ awk '$3>50000 {print $1, $3}' friends.txt
+chandu 12000000
+abignan 198987878
+deekshi 100000
+puji 1099387
+nikhil 348985
+vijitha@DESKTOP-MHLPFOC:~/stepin$ awk 'BEGIN {print "Name; salary"} {print $1, $3}' friends.txt
+Name; salary
+chandu 12000000
+abignan 198987878
+deekshi 100000
+puji 1099387
+nikhil 348985
+
+vijitha@DESKTOP-MHLPFOC:~/stepin$ awk 'BEGIN {print "Name age salary"} {print $1, $2, $3}' friends.txt
+Name age salary
+chandu 22 12000000
+abignan 22 198987878
+deekshi 21 100000
+puji 19 1099387
+nikhil 22 348985
+
+vijitha@DESKTOP-MHLPFOC:~/stepin$ awk '{total+= $3} END {print "Total salary=", total}' friends.txt
+Total salary= 212536250
+vijitha@DESKTOP-MHLPFOC:~/stepin$ awk '/chandu/' friends.txt
+chandu 22 12000000
+vijitha@DESKTOP-MHLPFOC:~/stepin$ ls -l
+total 16
+-rw-r--r-- 1 vijitha vijitha    78 Jul 30 07:01 50000
+-rwxr-xr-x 1 vijitha vijitha 15960 Jul 30 05:59 a.out
+-rw-r--r-- 1 vijitha vijitha   112 Jul 30 06:35 example
+-rw-r--r-- 1 vijitha vijitha    96 Jul 30 06:37 example.txt
+-rw-r--r-- 1 vijitha vijitha    58 Jul 30 06:49 example2
+-rw-r--r-- 1 vijitha vijitha   139 Jul 30 06:19 f1
+-rw-r--r-- 1 vijitha vijitha    52 Jul 30 06:20 f2
+-rw-r--r-- 1 vijitha vijitha   213 Jul 30 06:03 filecmd
+-rw-r--r-- 1 vijitha vijitha    92 Jul 30 06:59 friends.txt
+drwxr-xr-x 1 vijitha vijitha   512 Jul 29 14:53 linux
+-rw-r--r-- 1 vijitha vijitha   129 Jul 30 06:30 s45.txt
+-rw-r--r-- 1 vijitha vijitha   129 Jul 30 06:13 sample.txt
+drwxr-xr-x 1 vijitha vijitha   512 Jul 29 14:52 sdlc
+-rw-r--r-- 1 vijitha vijitha   106 Jul 30 05:58 sum.c
+vijitha@DESKTOP-MHLPFOC:~/stepin$ ls -l s45.txt
+-rw-r--r-- 1 vijitha vijitha 129 Jul 30 06:30 s45.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ chmod u+x s45.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ ls -l s45.txt
+-rwxr--r-- 1 vijitha vijitha 129 Jul 30 06:30 s45.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ chmod 422 sample.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$ ls -l sample.txt
+-r---w--w- 1 vijitha vijitha 129 Jul 30 06:13 sample.txt
+vijitha@DESKTOP-MHLPFOC:~/stepin$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
